@@ -5,11 +5,12 @@ public class Password {
 
         for (int i = 0; i < password.length; i++) {
             String pass = password[i];
+            isPasswordPassed = false;
             if (!(pass.charAt(0) == 1) && !(pass.charAt(pass.length() - 1) == 'z') && pass.length() > 8 && !pass.contains("qwerty") && !pass.contains("1234")) {
 
                 isPasswordPassed = true;
 
-            } else isPasswordPassed = false;
+            } 
 
             System.out.println("Пароль: " + pass + " прошел проверку? " + (isPasswordPassed ? "Да" : "Нет"));
 
