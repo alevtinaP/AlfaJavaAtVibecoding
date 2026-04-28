@@ -10,12 +10,12 @@ public class Basket {
 
 
         //сравнение по количеству
-        System.out.println("Количество продуктов совпадает: " + (productsPetr.length == productsKolya.length ? "Да" : "Нет"));
-        System.out.println("Количество продуктов совпадает: " + (productsPetr.length == productsTerentiyi.length ? "Да" : "Нет"));
+        System.out.println("Количество продуктов у Пети и Коли совпадает? " + (productsPetr.length == productsKolya.length ? "Да" : "Нет"));
+        System.out.println("Количество продуктов у Пети и Терентия совпадает? " + (productsPetr.length == productsTerentiyi.length ? "Да" : "Нет"));
 
         //сравнение по составу
-        System.out.println("Ассортимнт корзины совпадает: " + (Arrays.equals(productsPetr, productsKolya) ? "Да" : "Нет"));
-        System.out.println("Ассортимнт корзины совпадает: " + (Arrays.equals(productsPetr, productsTerentiyi) ? "Да" : "Нет"));
+        System.out.println("Ассортимнт корзин Пети и Коли совпадает? " + (Arrays.equals(productsPetr, productsKolya) ? "Да" : "Нет"));
+        System.out.println("Ассортимнт корзин Пети и Терентия совпадает? " + (Arrays.equals(productsPetr, productsTerentiyi) ? "Да" : "Нет"));
 
         //объединяем в 1 массив
         String[] allProduct = new String[9];
