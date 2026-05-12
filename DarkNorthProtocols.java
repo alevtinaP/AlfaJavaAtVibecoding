@@ -3,19 +3,19 @@ import java.util.Random;
 
 public class DarkNorthProtocols {
 
-   static void main(String[] args) {
+    static void main(String[] args) {
 
-       String accessCode = generateAccessCode();
-       System.out.println(accessCode);
+        String accessCode = generateAccessCode();
+        System.out.println(accessCode);
 
-       System.out.println(isValidCode("code", 8));
+        System.out.println(isValidCode("code", 8));
 
-       System.out.println(logEvent("Server protection activated"));
-       System.out.println(logEvent("Intrusion attempt detected", true));
+        logEvent("Server protection activated");
+        logEvent("Intrusion attempt detected", true);
 
-       System.out.println(generateAgentId ("Agent", 42));
-       System.out.println(generateAgentId("Agent", 77));
-       System.out.println(generateAgentId("Agent", 13));
+        System.out.println(generateAgentId("Agent", 42));
+        System.out.println(generateAgentId("Agent", 77));
+        System.out.println(generateAgentId("Agent", 13));
     }
 
     // 1. Протокол ГЕНЕРАТОР
@@ -26,6 +26,7 @@ public class DarkNorthProtocols {
         String code = year + "_" + resultInt;
         return code;
     }
+
     // 2. Протокол ВАЛИДАТОР
     private static boolean isValidCode(String code, int minLength) {
 
@@ -38,15 +39,15 @@ public class DarkNorthProtocols {
     }
 
     // 3. Протокол ЛОГГЕР
-    public static String logEvent (String massage) {
-        return "[INFO] " + massage;
+    public static void logEvent(String massage) {
+        System.out.println(("[INFO] " + massage));
     }
 
-    public static String logEvent (String massage, boolean isCritical) {
+    public static void logEvent(String massage, boolean isCritical) {
         if (isCritical) {
-            return "[CRITICAL] " + massage;
-        } else return logEvent(massage);
-            }
+            System.out.println(("[CRITICAL] " + massage));
+        } else logEvent(massage);
+    }
 
     // 4. Протокол РАНДОМАЙЗЕР
     public static String generateAgentId(String prefix, int seed) {
@@ -54,5 +55,4 @@ public class DarkNorthProtocols {
         int a = random.nextInt(9000) + 1000;
         return prefix + "-" + a;
     }
-
 }
