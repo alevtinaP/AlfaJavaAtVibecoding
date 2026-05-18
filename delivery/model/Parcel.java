@@ -41,8 +41,13 @@ public class Parcel {
         this.weight = weight;
     }
 
-    public double calculateDeliveryPrice() {return 100 + getWeight() * 30;
+    public double calculateDeliveryPrice() {
+        if (getWeight() == 0.0) {
+            return 0.0;
+        }
+        return 100 + getWeight() * 30;
     }
+
 
     public void printInfo() {
         System.out.println("Информация о посылке:");
@@ -53,6 +58,3 @@ public class Parcel {
         System.out.println("Стоимость доставки: " + calculateDeliveryPrice() + " руб.");
     }
 }
-
-
-
